@@ -6,7 +6,7 @@ import createCustomTheme from './theme';
 import { useColorMode } from './hooks/useColorMode';
 import { MapProvider, PlacesProvider } from './context'
 import { Home } from './pages/Home';
-import { Logs } from './pages/Logs';
+import { Contact } from './pages/Contact';
 
 const App = () => {
   const mode = useColorMode();
@@ -18,10 +18,9 @@ const App = () => {
       <MapProvider>
       <ThemeProvider theme={theme}>
         <MainContainer>
-        <SwitchColorMode />
         <Routes>
           <Route index path="/" element={ <Home /> } />
-          <Route path="logs" element={ <Logs /> } />
+          <Route path="contact" element={ <Contact /> } />
         </Routes>
         </MainContainer>
       </ThemeProvider>
