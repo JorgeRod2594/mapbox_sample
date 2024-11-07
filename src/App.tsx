@@ -1,31 +1,31 @@
-import { Typography, ThemeProvider, Link } from '@mui/material';
-import IconStack from './components/IconStack';
+import { ThemeProvider } from '@mui/material';
+import { Routes, Route, BrowserRouter } from "react-router-dom"
 import SwitchColorMode from './components/SwitchColorMode';
 import MainContainer from './Layouts/MainContainer';
 import createCustomTheme from './theme';
 import { useColorMode } from './hooks/useColorMode';
+import { PlacesProvider } from './context'
+import { Home } from './pages/Home';
+import { Logs } from './pages/Logs';
 
 const App = () => {
   const mode = useColorMode();
   const theme = createCustomTheme(mode);
 
   return (
+    <BrowserRouter>
+    <PlacesProvider>
     <ThemeProvider theme={theme}>
       <MainContainer>
-        <Typography variant="body1">Hello World!</Typography>
-        <SwitchColorMode />
-        <IconStack />
-        <Link
-          href="https://www.linkedin.com/in/andres-espinoza-delgado-fullstack-developer-typescript-react-nodejs-express-mongodb/"
-          target="_blank"
-          sx={{
-            marginTop: 10,
-          }}
-        >
-          <Typography variant="body1">Jorge Rojas Diaz</Typography>
-        </Link>
+      <SwitchColorMode />
+      <Routes>
+        <Route index path="/" element={ <Home /> } />
+        <Route path="logs" element={ <Logs /> } />
+      </Routes>
       </MainContainer>
     </ThemeProvider>
+    </PlacesProvider>
+    </BrowserRouter>
   );
 };
 
