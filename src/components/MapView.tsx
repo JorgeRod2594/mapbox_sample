@@ -38,7 +38,6 @@ export const MapView = () => {
                 width: '100vw'
             }}
         >
-            <Typography>{ userLocation?.join(',') }</Typography>
         </div>
     )
 }

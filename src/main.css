@@ -72,6 +72,24 @@ table {
   color: black;
 }
 
+.btn-info {
+  right: 20px !important;
+  padding: 5px;
+  height: auto;
+  position: fixed !important;
+  top: 20px;
+  z-index: 999;
+}
+
+.loader {
+  right: 50% !important;
+  padding: 5px;
+  height: auto;
+  position: fixed !important;
+  top: 50%;
+  z-index: 1999;
+}
+
 .not-visible {
   display: none;
   visibility: hidden;
